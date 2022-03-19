@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+## Credits
+
+- [Julia Dolgova](https://www.behance.net/gallery/139329605/Daily-UI-Challenge-004-Calculato-surrency-converter?tracking_source=search_projects%7Cconverter)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
