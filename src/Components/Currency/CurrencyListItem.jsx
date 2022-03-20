@@ -1,3 +1,5 @@
+import DeleteCurrencyButton from "./DeleteCurrencyButton";
+
 const CurrencyListItem = () => {
   return (
     <div className="CurrencyListItem">
@@ -8,6 +10,7 @@ const CurrencyListItem = () => {
         <option value="mango">Mango</option>
       </select>
       <input />
+      <DeleteCurrencyButton />
     </div>
   );
 };

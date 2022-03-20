@@ -44,12 +44,21 @@ input {
 
 .add-button {
   align-self: flex-end;
-  font-size: 0.6em;
+  font-size: 0.7em;
   position: relative;
   top: 0.5em;
 }
 
 .add-button:hover {
+  cursor: pointer;
+}
+
+.DeleteCurrencyButton {
+  font-size: 0.7em;
+  margin-left: 0.5em;
+}
+
+.DeleteCurrencyButton:hover {
   cursor: pointer;
 }
 
