@@ -10,7 +10,7 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: #eff1f6;
+  /* background-color: #eff1f6; */
 }
 
 * {

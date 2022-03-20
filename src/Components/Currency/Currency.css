@@ -1,0 +1,13 @@
+.CurrencyList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CurrencyListItem {
+  width: 15em;
+  height: 6em;
+  border: #e5eff0 solid 0.2em;
+  margin: 1em;
+  padding: 0.8em;
+  border-radius: 3%;
+}
