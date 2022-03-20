@@ -14,9 +14,10 @@
 input {
   height: 2em;
   border: none;
-  margin-left: 0.5em;
+  margin-left: 1em;
   border-radius: 50px;
   padding: 0 0.7em;
   background-color: #edf0f6;
   outline: none;
+  text-align: right;
 }

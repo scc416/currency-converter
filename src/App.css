@@ -1,6 +1,10 @@
 html {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 body {
@@ -10,6 +14,7 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #f7f7f9;
 }
 
