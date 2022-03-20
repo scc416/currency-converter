@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+.CurrencyListItem img {
+  height: 0.5em;
+  margin-left: 0.5em;
+}
+
 input {
   font-size: 12.6px;
   height: 1.5em;
