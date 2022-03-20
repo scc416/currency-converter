@@ -1,6 +1,8 @@
 .Title {
   display: flex;
-  font-size: 8.8vw;
+  font-size: 7.7vw;
+  color: #fafafa;
+  text-transform: uppercase;
   font-weight: 900;
 }
 
