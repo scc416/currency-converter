@@ -1,12 +1,11 @@
 .Title {
   display: flex;
-  align-items: center;
-  font-size: 1.1em;
+  font-size: 8.8vw;
   font-weight: 900;
-  padding-bottom: 1em;
 }
 
 .Title img {
-  height: 1.2em;
-  padding: 0 0.3em;
+  height: 0.6em;
+  position: relative;
+  bottom: 0.15em;
 }

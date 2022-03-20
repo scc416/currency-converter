@@ -3,8 +3,10 @@ import "./Title.css";
 const Title = () => {
   return (
     <div className="Title">
-      <img src="/favicon.png" />
       Currency converter
+      <sup>
+        <img src="/favicon.png" />
+      </sup>
     </div>
   );
 };
