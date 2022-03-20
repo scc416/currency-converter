@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useReducer, useEffect } from "react";
 
-const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
+import { RECEIVE_AVAILABLE_CURRENCIES } from "../constants";
 
 const useData = () => {
   const reducers = {
@@ -29,7 +29,7 @@ const useData = () => {
   }, []);
 
   const { availableCurrencies } = state;
-  
+
   return { availableCurrencies };
 };
 
