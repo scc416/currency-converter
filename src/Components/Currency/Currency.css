@@ -42,6 +42,17 @@ input {
   font-family: "VT323";
 }
 
+.add-button {
+  align-self: flex-end;
+  font-size: 0.6em;
+  position: relative;
+  top: 0.5em;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 420px) {
   .CurrencyList {
     font-size: 3vw;
