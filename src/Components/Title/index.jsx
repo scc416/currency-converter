@@ -1,6 +1,8 @@
+import "./Title.css"
+
 const Title = () => {
   return (
-    <div>
+    <div className="Title">
       Currency converter <img src="/favicon.png"></img>
     </div>
   );

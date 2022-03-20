@@ -1,0 +1,10 @@
+.Title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.Title img {
+  height: 1.2em;
+  padding: 0 0.3em;
+}
