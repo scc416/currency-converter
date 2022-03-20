@@ -5,7 +5,7 @@ const App = () => {
   const currencies = useData();
   return (
     <>
-      <div>Currency Converter</div>
+      <div>Currency converter</div>
     </>
   );
 };
