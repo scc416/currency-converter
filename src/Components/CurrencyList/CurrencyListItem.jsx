@@ -1,10 +1,10 @@
 import DeleteCurrencyButton from "./DeleteCurrencyButton";
 import AvailableCurrencyList from "./AvailableCurrencyList";
 
-const CurrencyListItem = () => {
+const CurrencyListItem = ({ availableCurrencies }) => {
   return (
     <div className="CurrencyListItem">
-      <AvailableCurrencyList />
+      <AvailableCurrencyList {...{ availableCurrencies }} />
       <input />
       <DeleteCurrencyButton />
     </div>

@@ -1,14 +1,11 @@
 import AvailableCurrencyListItem from "./AvailableCurrencyListItem";
 
-const AvailableCurrencyList = () => {
-  return (
-    <select value="grapefruit">
-      <AvailableCurrencyListItem value="grapefruit" />
-      <AvailableCurrencyListItem value="lime" />
-      <AvailableCurrencyListItem value="coconut" />
-      <AvailableCurrencyListItem value="mango" />
-    </select>
-  );
+const AvailableCurrencyList = ({ availableCurrencies }) => {
+  const elms = availableCurrencies.map((currency) => (
+    <AvailableCurrencyListItem value={currency} />
+  ));
+  
+  return <select value="grapefruit">{elms}</select>;
 };
 
 export default AvailableCurrencyList;

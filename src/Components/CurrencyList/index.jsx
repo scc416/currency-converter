@@ -6,8 +6,12 @@ import useData from "../../hooks/useData";
 const lst = [1, 2];
 
 const CurrencyList = () => {
-  const currencies = useData();
-  const elms = lst.map((elm) => <CurrencyListItem />);
+  const { availableCurrencies } = useData();
+  
+  const elms = lst.map((elm) => (
+    <CurrencyListItem {...{ availableCurrencies }} />
+  ));
+
   return (
     <div className="CurrencyList">
       {elms} <AddCurrencyBottom />
