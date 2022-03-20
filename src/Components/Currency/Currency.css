@@ -21,6 +21,14 @@
   margin-left: 0.5em;
 }
 
+select {
+  height: 1.5em;
+  font-size: 12.6px;
+  border: none;
+  outline: none;
+  background-color: #f8f9fb;
+}
+
 input {
   font-size: 12.6px;
   height: 1.5em;
@@ -39,7 +47,8 @@ input {
     font-size: 3vw;
   }
 
-  input {
+  input,
+  select {
     font-size: 3vw;
   }
 }
@@ -49,7 +58,8 @@ input {
     font-size: 23.04px;
   }
 
-  input {
+  input,
+  select {
     font-size: 23.04px;
   }
 }
