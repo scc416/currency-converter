@@ -2,7 +2,7 @@
 
 ## Credits
 
-- The design is cloned with [Julia Dolgova](https://www.behance.net/gallery/139329605/Daily-UI-Challenge-004-Calculato-surrency-converter?tracking_source=search_projects%7Cconverter)'s deisgn
+- The design is a mix of [Julia Dolgova](https://www.behance.net/gallery/139329605/Daily-UI-Challenge-004-Calculato-surrency-converter) and [Anton Mastakov & Evgeny UPROCK](https://www.behance.net/gallery/139120523/Broadway-Malyan-Web-concept)'s deisgn
 - [Favicon](https://www.flaticon.com/free-icons/dollar-symbol) created by [Freepik](https://www.flaticon.com/authors/freepik) - [Flaticon](https://www.flaticon.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
