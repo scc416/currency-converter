@@ -1,14 +1,10 @@
 import DeleteCurrencyButton from "./DeleteCurrencyButton";
+import AvailableCurrencyList from "./AvailableCurrencyList";
 
 const CurrencyListItem = () => {
   return (
     <div className="CurrencyListItem">
-      <select value="grapefruit" >
-        <option value="grapefruit">Grapefruit</option>
-        <option value="lime">Lime</option>
-        <option value="coconut">Coconut</option>
-        <option value="mango">Mango</option>
-      </select>
+      <AvailableCurrencyList />
       <input />
       <DeleteCurrencyButton />
     </div>
