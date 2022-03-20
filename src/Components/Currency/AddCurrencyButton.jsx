@@ -1,5 +1,5 @@
 const AddCurrencyBottom = () => {
-  return <div className="add-button">+ Add Currency</div>
+  return <div className="AddCurrencyBottom">+ Add Currency</div>
 }
 
 export default AddCurrencyBottom;
