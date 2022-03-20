@@ -2,24 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 100%;
   font-size: 1.2em;
-  padding: 2em 2em 0 0;
 }
 
 .CurrencyListItem {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
   margin: 0.5em 0;
-  padding-right: 10em;
-  border-radius: 0.8em;
+  align-items: center;
 }
 
 input {
-  font-size: 1.1em;
-  height: 2em;
+  font-size: 1.5em;
+  height: 1.5em;
   border: none;
   margin-left: 1em;
   border-radius: 50px;
@@ -27,4 +21,5 @@ input {
   background-color: #edf0f6;
   outline: none;
   text-align: right;
+  font-family: "VT323";
 }
