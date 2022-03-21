@@ -7,9 +7,9 @@ const lst = [1, 2];
 
 const CurrencyList = () => {
   const { availableCurrencies } = useData();
-  
+
   const elms = lst.map((elm) => (
-    <CurrencyListItem {...{ availableCurrencies }} />
+    <CurrencyListItem {...{ key: elm, availableCurrencies }} />
   ));
 
   return (

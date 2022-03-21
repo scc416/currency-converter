@@ -1,10 +1,12 @@
 import AvailableCurrencyListItem from "./AvailableCurrencyListItem";
+import { makeDisplayCurrencies } from "../../helper";
 
 const AvailableCurrencyList = ({ availableCurrencies }) => {
-  const elms = availableCurrencies.map((currency) => (
-    <AvailableCurrencyListItem value={currency} />
+  const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
+  const elms = displayedCurrencies.map((currency) => (
+    <AvailableCurrencyListItem key={currency} value={currency} />
   ));
-  
+
   return <select value="grapefruit">{elms}</select>;
 };
 
