@@ -14,20 +14,17 @@
   display: flex;
   margin: 0.5em 0;
   align-items: center;
+  justify-content: space-between;
+}
+
+.CurrencyNumberInput {
+  display: flex;
+  align-items: center;
 }
 
 .CurrencyListItem img {
   height: 0.5em;
   margin-left: 0.5em;
-}
-
-select {
-  height: 1.5em;
-  font-size: 12.6px;
-  border: none;
-  outline: none;
-  background-color: #f8f9fb;
-  max-width: 5em;
 }
 
 input {
@@ -68,8 +65,7 @@ input {
     font-size: 3vw;
   }
 
-  input,
-  select {
+  input {
     font-size: 3vw;
   }
 }
@@ -79,8 +75,7 @@ input {
     font-size: 23.04px;
   }
 
-  input,
-  select {
+  input {
     font-size: 23.04px;
   }
 }

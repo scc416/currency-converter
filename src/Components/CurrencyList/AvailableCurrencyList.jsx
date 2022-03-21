@@ -1,24 +1,30 @@
-import AvailableCurrencyListItem from "./AvailableCurrencyListItem";
-import { makeDisplayCurrencies } from "../../helper";
+import Select from "react-select";
+import { makeDisplayCurrencies, findCurrencyObj } from "../../helper";
 import useFocus from "../../hooks/useFocus";
-
 const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
   const { focused, onFocus, onBlur } = useFocus();
 
   const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
-  const elms = displayedCurrencies.map(({ code, displayedStr }) => {
+  const options = displayedCurrencies.map(({ code, displayedStr }) => {
     const displayText =
       selectedCode === code && !focused
         ? displayedStr.slice(0, 8)
         : displayedStr;
-
-    return <AvailableCurrencyListItem {...{ key: code, code, displayText }} />;
+    return { value: code, label: displayText };
   });
 
+  const value = findCurrencyObj(options, selectedCode);
+
   return (
-    <select {...{ value: selectedCode, onFocus, onBlur, onChange: onBlur }}>
-      {elms}
-    </select>
+    <Select
+      {...{
+        value,
+        options,
+        isSearchable: true,
+        onMenuOpen: onFocus,
+        onMenuClose: onBlur,
+      }}
+    />
   );
 };
 

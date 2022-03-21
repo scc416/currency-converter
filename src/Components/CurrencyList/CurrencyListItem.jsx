@@ -5,8 +5,10 @@ const CurrencyListItem = ({ availableCurrencies, code, value }) => {
   return (
     <div className="CurrencyListItem">
       <AvailableCurrencyList {...{ availableCurrencies, code }} />
-      <input value={value} />
-      <DeleteCurrencyButton />
+      <div className="CurrencyNumberInput">
+        <input value={value} />
+        <DeleteCurrencyButton />
+      </div>
     </div>
   );
 };

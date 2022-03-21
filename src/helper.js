@@ -28,3 +28,11 @@ export const makeDisplayCurrencies = (lst) => {
   }
   return displayedLst;
 };
+
+export const findCurrencyObj = (options, code) => {
+  for (const currency of options) {
+    const { value } = currency;
+    const found = value === code;
+    if (found) return currency;
+  }
+};
