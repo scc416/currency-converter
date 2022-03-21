@@ -1,8 +1,9 @@
 import { currenciesEmoji } from "./constants";
 
-const findCurrency = (lst, name, code) => {
-  const keys = Object.keys(lst);
-  const values = Object.values(lst);
+const findCurrency = (lst, code) => {
+  const exist = code in lst;
+  if (!exist) return;
+  return true;
 };
 
 export const makeAvailableCurrencyLst = (lst) => {
