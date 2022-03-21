@@ -1,5 +1,5 @@
 const DeleteCurrencyButton = () => {
-  return <div class="DeleteCurrencyButton">✕</div>;
+  return <div className="DeleteCurrencyButton">✕</div>;
 };
 
 export default DeleteCurrencyButton;
