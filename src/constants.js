@@ -1,5 +1,8 @@
 export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
 
+export const availableCurrenciesURL =
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
+
 export const currenciesEmoji = [
   { code: "aed", emoji: "🇦🇪" },
   { code: "afn", emoji: "🇦🇫" },

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useReducer, useEffect } from "react";
-import { makeAvailableCurrencyLst, makeDisplayCurrencies } from "../helper";
-import { RECEIVE_AVAILABLE_CURRENCIES } from "../constants";
+import { makeAvailableCurrencyLst } from "../helper";
+import {
+  RECEIVE_AVAILABLE_CURRENCIES,
+  availableCurrenciesURL,
+} from "../constants";
 
 const useData = () => {
   const reducers = {
@@ -21,9 +24,7 @@ const useData = () => {
 
   useEffect(async () => {
     try {
-      const { data } = await axios.get(
-        "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
-      );
+      const { data } = await axios.get(availableCurrenciesURL);
       dispatch({ type: RECEIVE_AVAILABLE_CURRENCIES, currencies: data });
     } catch (err) {
       console.log(err);
