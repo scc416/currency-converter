@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 
-.CurrencyNumberInput {
+.ValueInput {
   display: flex;
   align-items: center;
 }
@@ -28,7 +28,7 @@
 }
 
 input {
-  font-size: 12.6px;
+  font-size: 16.8px;
   height: 1.5em;
   border: none;
   margin-left: 1em;
@@ -66,7 +66,7 @@ input {
   }
 
   input {
-    font-size: 3vw;
+    font-size: 4vw;
   }
 }
 
@@ -76,6 +76,6 @@ input {
   }
 
   input {
-    font-size: 23.04px;
+    font-size: 30.72px;
   }
 }
