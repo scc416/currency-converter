@@ -1,13 +1,14 @@
 import Select from "react-select";
 import { makeDisplayCurrencies, findCurrencyObj } from "../../helper";
-import useFocus from "../../hooks/useFocus";
+import useOpen from "../../hooks/useOpen";
+
 const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
-  const { focused, onFocus, onBlur } = useFocus();
+  const { opened, onMenuOpen, onMenuClose } = useOpen();
 
   const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
   const options = displayedCurrencies.map(({ code, displayedStr }) => {
     const displayText =
-      selectedCode === code && !focused
+      selectedCode === code && !opened
         ? displayedStr.slice(0, 8)
         : displayedStr;
     return { value: code, label: displayText };
@@ -17,13 +18,7 @@ const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
 
   return (
     <Select
-      {...{
-        value,
-        options,
-        isSearchable: true,
-        onMenuOpen: onFocus,
-        onMenuClose: onBlur,
-      }}
+      {...{ value, options, onMenuOpen, onMenuClose, isSearchable: true }}
     />
   );
 };
