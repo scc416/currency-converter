@@ -1,4 +1,5 @@
 export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
+export const RECEIVE_NEW_CURRENCY = "RECEIVE_NEW_CURRENCY";
 
 export const initState = {
   availableCurrencies: [],

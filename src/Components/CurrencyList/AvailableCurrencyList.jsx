@@ -2,7 +2,11 @@ import Select from "react-select";
 import { makeDisplayCurrencies, findCurrencyObj } from "../../helper";
 import useOpen from "../../hooks/useOpen";
 
-const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
+const AvailableCurrencyList = ({
+  availableCurrencies,
+  code: selectedCode,
+  updateCurrency,
+}) => {
   const { opened, onMenuOpen, onMenuClose } = useOpen();
 
   const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
@@ -18,7 +22,14 @@ const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
 
   return (
     <Select
-      {...{ value, options, onMenuOpen, onMenuClose, isSearchable: true }}
+      {...{
+        value,
+        options,
+        onMenuOpen,
+        onMenuClose,
+        isSearchable: true,
+        onChange: (e) => updateCurrency(e.value),
+      }}
     />
   );
 };

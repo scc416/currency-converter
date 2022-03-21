@@ -3,6 +3,7 @@ import { useReducer, useEffect } from "react";
 import { makeAvailableCurrencyLst } from "../helper";
 import {
   RECEIVE_AVAILABLE_CURRENCIES,
+  RECEIVE_NEW_CURRENCY,
   availableCurrenciesURL,
   initState,
 } from "../constants";
@@ -14,6 +15,14 @@ const useData = () => {
         ...state,
         availableCurrencies: makeAvailableCurrencyLst(currencies),
       };
+    },
+    [RECEIVE_NEW_CURRENCY](state, { number, code }) {
+      const { currencies } = state;
+      const newCurrencies = [...currencies];
+      const newCurrency = { ...newCurrencies[number] };
+      newCurrency.code = code;
+      newCurrencies[number] = newCurrencies;
+      return { ...state, currencies: newCurrencies };
     },
   };
 
@@ -32,9 +41,13 @@ const useData = () => {
     }
   }, []);
 
+  const updateSelectedCurrencies = (number, code) => {
+    dispatch({ type: RECEIVE_NEW_CURRENCY, number, code });
+  };
+
   const { availableCurrencies, currencies } = state;
 
-  return { availableCurrencies, currencies };
+  return { availableCurrencies, currencies, updateSelectedCurrencies };
 };
 
 export default useData;
