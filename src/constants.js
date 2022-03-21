@@ -1,9 +1,6 @@
 export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
 
 export const currenciesEmoji = [
-  { code: "eur", emoji: "🇪🇺" },
-  { code: "usd", emoji: "🇺🇸" },
-  { code: "cad", emoji: "🇨🇦" },
   { code: "aed", emoji: "🇦🇪" },
   { code: "afn", emoji: "🇦🇫" },
   { code: "all", emoji: "🇦🇱" },
@@ -29,6 +26,7 @@ export const currenciesEmoji = [
   { code: "bwp", emoji: "🇧🇼" },
   { code: "byr", emoji: "🇧🇾" },
   { code: "bzd", emoji: "🇧🇿" },
+  { code: "cad", emoji: "🇨🇦" },
   { code: "cdf", emoji: "🇨🇩" },
   { code: "chf", emoji: "🇨🇭" },
   { code: "clp", emoji: "🇨🇱" },
@@ -47,6 +45,7 @@ export const currenciesEmoji = [
   { code: "egp", emoji: "🇪🇬" },
   { code: "ern", emoji: "🇪🇷" },
   { code: "etb", emoji: "🇪🇹" },
+  { code: "eur", emoji: "🇪🇺" },
   { code: "fkp", emoji: "🇫🇰" },
   { code: "fjd", emoji: "🇫🇯" },
   { code: "gbp", emoji: "🇬🇧" },
@@ -151,6 +150,7 @@ export const currenciesEmoji = [
   { code: "ugx", emoji: "🇺🇬" },
   { code: "mru", emoji: "🇲🇷" },
   { code: "mnt", emoji: "🇲🇳" },
+  { code: "usd", emoji: "🇺🇸" },
   { code: "uyu", emoji: "🇺🇾" },
   { code: "uzs", emoji: "🇺🇿" },
   { code: "vef", emoji: "🇻🇪" },

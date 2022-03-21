@@ -6,8 +6,6 @@ import { RECEIVE_AVAILABLE_CURRENCIES } from "../constants";
 const useData = () => {
   const reducers = {
     [RECEIVE_AVAILABLE_CURRENCIES](state, { currencies }) {
-      console.log(currencies);
-      console.log(makeAvailableCurrencyLst(currencies));
       return {
         ...state,
         availableCurrencies: makeAvailableCurrencyLst(currencies),

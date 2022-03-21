@@ -7,6 +7,13 @@ const findCurrency = (lst, code) => {
 };
 
 export const makeAvailableCurrencyLst = (lst) => {
+  console.log(
+    currenciesEmoji.sort((a, b) => {
+      const { code: codeA } = a;
+      const { code: codeB } = b;
+      return codeA.localeCompare(codeB);
+    })
+  );
   const availableCurrencyLst = [];
   for (const currency of currenciesEmoji) {
     const { code } = currency;
