@@ -20,7 +20,7 @@ const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
       value={selectedCode}
       onFocus={onFocus}
       onBlur={onBlur}
-      onChange={(e) => e.target.blur()}
+      onChange={onBlur}
     >
       {elms}
     </select>
