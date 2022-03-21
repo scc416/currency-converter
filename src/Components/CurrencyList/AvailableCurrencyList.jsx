@@ -16,12 +16,7 @@ const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
   });
 
   return (
-    <select
-      value={selectedCode}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onChange={onBlur}
-    >
+    <select {...{ value: selectedCode, onFocus, onBlur, onChange: onBlur }}>
       {elms}
     </select>
   );
