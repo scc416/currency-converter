@@ -1,5 +1,5 @@
-const AddCurrencyBottom = () => {
+const AddCurrencyButtom = () => {
   return <div className="AddCurrencyBottom">+ Add Currency</div>
 }
 
-export default AddCurrencyBottom;
+export default AddCurrencyButtom;

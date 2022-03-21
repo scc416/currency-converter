@@ -1,20 +1,18 @@
 import "./Currency.css";
 import CurrencyListItem from "./CurrencyListItem";
-import AddCurrencyBottom from "./AddCurrencyButton";
+import AddCurrencyButtom from "./AddCurrencyButton";
 import useData from "../../hooks/useData";
 
-const lst = [1, 2];
-
 const CurrencyList = () => {
-  const { availableCurrencies } = useData();
+  const { availableCurrencies, currencies } = useData();
 
-  const elms = lst.map((elm) => (
-    <CurrencyListItem {...{ key: elm, availableCurrencies }} />
+  const elms = currencies.map(({ code, val }, index) => (
+    <CurrencyListItem {...{ key: index, availableCurrencies, code, val }} />
   ));
 
   return (
     <div className="CurrencyList">
-      {elms} <AddCurrencyBottom />
+      {elms} <AddCurrencyButtom />
     </div>
   );
 };

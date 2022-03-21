@@ -22,8 +22,9 @@ export const makeAvailableCurrencyLst = (lst) => {
 export const makeDisplayCurrencies = (lst) => {
   const displayedLst = [];
   for (const { name, emoji, code } of lst) {
-    const displayedStr = `${emoji}${code.toUpperCase()} - ${name}`;
-    displayedLst.push(displayedStr);
+    const displayedStr = `${emoji} ${code.toUpperCase()} - ${name}`;
+    const newEntry = { code, displayedStr };
+    displayedLst.push(newEntry);
   }
   return displayedLst;
 };

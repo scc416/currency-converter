@@ -1,5 +1,13 @@
 export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
 
+export const initState = {
+  availableCurrencies: [],
+  currencies: [
+    { code: "hkd", value: 0 },
+    { code: "cad", value: 0 },
+  ],
+};
+
 export const availableCurrenciesURL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
 

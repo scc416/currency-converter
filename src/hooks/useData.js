@@ -4,6 +4,7 @@ import { makeAvailableCurrencyLst } from "../helper";
 import {
   RECEIVE_AVAILABLE_CURRENCIES,
   availableCurrenciesURL,
+  initState,
 } from "../constants";
 
 const useData = () => {
@@ -20,7 +21,7 @@ const useData = () => {
     return reducers[action.type](state, action) || state;
   };
 
-  const [state, dispatch] = useReducer(reducer, { availableCurrencies: [] });
+  const [state, dispatch] = useReducer(reducer, initState);
 
   useEffect(async () => {
     try {
@@ -31,9 +32,9 @@ const useData = () => {
     }
   }, []);
 
-  const { availableCurrencies } = state;
+  const { availableCurrencies, currencies } = state;
 
-  return { availableCurrencies };
+  return { availableCurrencies, currencies };
 };
 
 export default useData;
