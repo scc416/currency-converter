@@ -1,5 +1,5 @@
-const AvailableCurrencyListItem = ({ code, displayedStr, onBlur }) => {
-  return <option value={code}>{displayedStr}</option>;
+const AvailableCurrencyListItem = ({ code, displayText }) => {
+  return <option value={code}>{displayText}</option>;
 };
 
 export default AvailableCurrencyListItem;

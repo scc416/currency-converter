@@ -7,18 +7,12 @@ const AvailableCurrencyList = ({ availableCurrencies, code: selectedCode }) => {
 
   const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
   const elms = displayedCurrencies.map(({ code, displayedStr }) => {
-    return (
-      <AvailableCurrencyListItem
-        {...{
-          key: code,
-          code,
-          displayedStr:
-            selectedCode === code && !focused
-              ? displayedStr.slice(0, 8)
-              : displayedStr,
-        }}
-      />
-    );
+    const displayText =
+      selectedCode === code && !focused
+        ? displayedStr.slice(0, 8)
+        : displayedStr;
+
+    return <AvailableCurrencyListItem {...{ key: code, code, displayText }} />;
   });
 
   return (
