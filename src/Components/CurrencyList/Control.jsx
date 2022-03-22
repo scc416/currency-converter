@@ -1,4 +1,4 @@
-const AddCurrencyButtom = ({ addCurrency }) => {
+const Control = ({ addCurrency }) => {
   return (
     <div>
       <div className="AddCurrencyBottom" onClick={addCurrency}>
@@ -9,4 +9,4 @@ const AddCurrencyButtom = ({ addCurrency }) => {
   );
 };
 
-export default AddCurrencyButtom;
+export default Contorl;

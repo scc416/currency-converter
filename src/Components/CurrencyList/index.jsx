@@ -1,6 +1,6 @@
 import "./Currency.css";
 import CurrencyListItem from "./CurrencyListItem";
-import AddCurrencyButtom from "./AddCurrencyButton";
+import Contorl from "./Control";
 import useData from "../../hooks/useData";
 
 const CurrencyList = () => {
@@ -29,7 +29,7 @@ const CurrencyList = () => {
 
   return (
     <div className="CurrencyList">
-      {elms} <AddCurrencyButtom addCurrency={addCurrency} />
+      {elms} <Control addCurrency={addCurrency} />
     </div>
   );
 };
