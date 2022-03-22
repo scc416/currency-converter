@@ -10,15 +10,16 @@ export const ERROR_TOO_MANY_CURRENCIES = "You can have at most 10 currencies.";
 export const ERROR_TOO_LESS_CURRENCIES = "You need at least 2 currencies";
 
 export const INIT_VALUE = 1;
-export const INIT_INDEX = 0
+export const INIT_INDEX = 0;
+
 export const initState = {
   availableCurrencies: [],
   currencies: [
-    { code: "hkd", value: 1 },
+    { code: "hkd", value: INIT_VALUE },
     { code: "cad", value: 0 },
   ],
-  value: 1,
-  rate: 1,
+  value: INIT_VALUE,
+  rate: null,
   rates: [],
   error: null,
 };
