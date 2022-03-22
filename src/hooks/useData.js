@@ -16,6 +16,7 @@ import {
   REMOVE_ERROR,
   SET_ERROR,
   ERROR_TOO_MANY_CURRENCIES,
+  ERROR_TOO_LESS_CURRENCIES,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -72,7 +73,6 @@ const useData = () => {
         data: { hkd: rates },
       } = await axios.get(latestRatesURL);
       dispatch({ type: INIT_SETUP, currencies, rates });
-      dispatch({ type: SET_ERROR, error: "HELLO" });
     } catch (err) {
       console.log(err);
     }
@@ -107,9 +107,8 @@ const useData = () => {
   const deleteCurrency = (index) => {
     const toLessCurrencies = currencies.length <= 2;
     if (toLessCurrencies) {
-      return dispatch({ type: SET_ERROR, error: ERROR_TOO_MANY_CURRENCIES });
+      return dispatch({ type: SET_ERROR, error: ERROR_TOO_LESS_CURRENCIES });
     }
-    dispatch({ type: ADD_CURRENCY });
     dispatch({ type: REMOVE_CURRENCY, index });
   };
 
