@@ -5,9 +5,10 @@ export const RECEIVE_NEW_VALUE = "RECEIVE_NEW_VALUE";
 export const initState = {
   availableCurrencies: [],
   currencies: [
-    { code: "hkd", value: 0 },
+    { code: "hkd", value: 1 },
     { code: "cad", value: 0 },
   ],
+  currenctCode: 0,
 };
 
 export const availableCurrenciesURL =

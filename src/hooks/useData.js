@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useReducer, useEffect } from "react";
-import { makeAvailableCurrencyLst } from "../helper";
+import { makeAvailableCurrencyLst, getLatestRateURL } from "../helper";
 import {
   RECEIVE_AVAILABLE_CURRENCIES,
   RECEIVE_NEW_CURRENCY,
@@ -41,10 +41,18 @@ const useData = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
+  const { availableCurrencies, currencies, currenctCode } = state;
+
   useEffect(async () => {
     try {
       const { data } = await axios.get(availableCurrenciesURL);
       dispatch({ type: RECEIVE_AVAILABLE_CURRENCIES, currencies: data });
+      const code = currencies[currenctCode].code;
+      const url = getLatestRateURL(code);
+      const {
+        data: { [code]: rate },
+      } = await axios.get(url);
+      console.log(rate);
     } catch (err) {
       console.log(err);
     }
@@ -57,8 +65,6 @@ const useData = () => {
   const updateValue = (index, value) => {
     dispatch({ type: RECEIVE_NEW_VALUE, index, value });
   };
-
-  const { availableCurrencies, currencies } = state;
 
   return {
     availableCurrencies,
