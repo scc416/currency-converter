@@ -9,6 +9,8 @@ export const REMOVE_ERROR = "REMOVE_ERROR";
 export const ERROR_TOO_MANY_CURRENCIES = "You can have at most 10 currencies.";
 export const ERROR_TOO_LESS_CURRENCIES = "You need at least 2 currencies";
 
+export const INIT_VALUE = 1;
+export const INIT_INDEX = 0
 export const initState = {
   availableCurrencies: [],
   currencies: [

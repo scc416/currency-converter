@@ -17,6 +17,8 @@ import {
   SET_ERROR,
   ERROR_TOO_MANY_CURRENCIES,
   ERROR_TOO_LESS_CURRENCIES,
+  INIT_VALUE,
+  INIT_INDEX,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -25,7 +27,11 @@ import {
 const useData = () => {
   const reducers = {
     [INIT_SETUP](state, { currencies, rates }) {
-      const { newCurrencies } = updateWithNewValue({ ...state, rates }, 0, 1);
+      const { newCurrencies } = updateWithNewValue(
+        { ...state, rates },
+        INIT_INDEX,
+        INIT_VALUE
+      );
       const newAvailableCurrencies = makeAvailableCurrencyLst(currencies);
       return {
         ...state,
