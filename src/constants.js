@@ -1,4 +1,4 @@
-export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
+export const INIT_SETUP = "INIT_SETUP";
 export const RECEIVE_NEW_CURRENCY = "RECEIVE_NEW_CURRENCY";
 export const RECEIVE_NEW_VALUE = "RECEIVE_NEW_VALUE";
 export const RECEIVE_NEW_RATE = "RECEIVE_NEW_RATE";
@@ -6,13 +6,15 @@ export const RECEIVE_NEW_RATE = "RECEIVE_NEW_RATE";
 export const initState = {
   availableCurrencies: [],
   currencies: [
-    { code: "hkd", value: 0 },
+    { code: "hkd", value: 1 },
     { code: "cad", value: 0 },
   ],
-  currenctIndex: 0,
+  valueInHKD: 1,
   rate: [],
 };
 
+export const latestRateURL =
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/hkd.json";
 export const availableCurrenciesURL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
 

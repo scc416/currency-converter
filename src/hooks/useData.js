@@ -1,20 +1,22 @@
 import axios from "axios";
 import { useReducer, useEffect } from "react";
-import { makeAvailableCurrencyLst, getLatestRateURL } from "../helper";
+import { makeAvailableCurrencyLst } from "../helper";
 import {
-  RECEIVE_AVAILABLE_CURRENCIES,
+  INIT_SETUP,
   RECEIVE_NEW_CURRENCY,
   RECEIVE_NEW_VALUE,
   RECEIVE_NEW_RATE,
   availableCurrenciesURL,
+  latestRateURL,
   initState,
 } from "../constants";
 
 const useData = () => {
   const reducers = {
-    [RECEIVE_AVAILABLE_CURRENCIES](state, { currencies }) {
+    [INIT_SETUP](state, { currencies, rate }) {
       return {
         ...state,
+        rate,
         availableCurrencies: makeAvailableCurrencyLst(currencies),
       };
     },
@@ -69,11 +71,6 @@ const useData = () => {
       return dispatch({ type: RECEIVE_NEW_RATE, index, rate, value });
     }
     try {
-      const url = getLatestRateURL(code);
-      const {
-        data: { [code]: newRate },
-      } = await axios.get(url);
-
       dispatch({ type: RECEIVE_NEW_RATE, index, rate: newRate, value });
     } catch (e) {
       console.log(e);
@@ -82,9 +79,11 @@ const useData = () => {
 
   useEffect(async () => {
     try {
-      const { data } = await axios.get(availableCurrenciesURL);
-      dispatch({ type: RECEIVE_AVAILABLE_CURRENCIES, currencies: data });
-      newIndex(0, 1);
+      const { data: currencies } = await axios.get(availableCurrenciesURL);
+      const {
+        data: { [code]: rate },
+      } = await axios.get(latestRateURL);
+      dispatch({ type: INIT_SETUP, currencies, rate });
     } catch (err) {
       console.log(err);
     }
