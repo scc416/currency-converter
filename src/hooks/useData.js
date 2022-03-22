@@ -15,6 +15,7 @@ import {
   REMOVE_CURRENCY,
   REMOVE_ERROR,
   SET_ERROR,
+  ERROR_TOO_MANY_CURRENCIES,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -62,8 +63,7 @@ const useData = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const { availableCurrencies, currencies, currenctIndex, rates, error } =
-    state;
+  const { availableCurrencies, currencies, error } = state;
 
   useEffect(async () => {
     try {
@@ -80,7 +80,10 @@ const useData = () => {
 
   useEffect(() => {
     if (error) {
-      const removeError = setTimeout(() => dispatch({ type: REMOVE_ERROR }), 2500);
+      const removeError = setTimeout(
+        () => dispatch({ type: REMOVE_ERROR }),
+        2500
+      );
       return () => clearTimeout(removeError);
     }
   }, [error]);
@@ -94,10 +97,19 @@ const useData = () => {
   };
 
   const addCurrency = () => {
+    const tooManyCurrencies = currencies.length >= 10;
+    if (tooManyCurrencies) {
+      return dispatch({ type: SET_ERROR, error: ERROR_TOO_MANY_CURRENCIES });
+    }
     dispatch({ type: ADD_CURRENCY });
   };
 
   const deleteCurrency = (index) => {
+    const toLessCurrencies = currencies.length <= 2;
+    if (toLessCurrencies) {
+      return dispatch({ type: SET_ERROR, error: ERROR_TOO_MANY_CURRENCIES });
+    }
+    dispatch({ type: ADD_CURRENCY });
     dispatch({ type: REMOVE_CURRENCY, index });
   };
 
