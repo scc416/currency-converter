@@ -88,12 +88,17 @@ const useData = () => {
     }
   }, [error]);
 
+  const dispatcher = (action) => {
+    dispatch({ type: REMOVE_ERROR });
+    dispatch(action);
+  };
+
   const updateSelectedCurrencies = (index, code) => {
-    dispatch({ type: RECEIVE_NEW_CURRENCY, index, code });
+    dispatcher({ type: RECEIVE_NEW_CURRENCY, index, code });
   };
 
   const updateValue = (index, value) => {
-    dispatch({ type: RECEIVE_NEW_VALUE, index, value });
+    dispatcher({ type: RECEIVE_NEW_VALUE, index, value });
   };
 
   const addCurrency = () => {
@@ -101,7 +106,7 @@ const useData = () => {
     if (tooManyCurrencies) {
       return dispatch({ type: SET_ERROR, error: ERROR_TOO_MANY_CURRENCIES });
     }
-    dispatch({ type: ADD_CURRENCY });
+    dispatcher({ type: ADD_CURRENCY });
   };
 
   const deleteCurrency = (index) => {
@@ -109,7 +114,7 @@ const useData = () => {
     if (toLessCurrencies) {
       return dispatch({ type: SET_ERROR, error: ERROR_TOO_LESS_CURRENCIES });
     }
-    dispatch({ type: REMOVE_CURRENCY, index });
+    dispatcher({ type: REMOVE_CURRENCY, index });
   };
 
   return {
