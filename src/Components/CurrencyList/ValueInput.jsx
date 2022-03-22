@@ -1,6 +1,6 @@
 import DeleteCurrencyButton from "./DeleteCurrencyButton";
 
-const ValueInput = ({ value, updateValue }) => {
+const ValueInput = ({ value, updateValue, deleteCurrency }) => {
   return (
     <div className="ValueInput">
       <input
@@ -8,7 +8,7 @@ const ValueInput = ({ value, updateValue }) => {
         onChange={(e) => updateValue(e.target.value)}
         type="number"
       />
-      <DeleteCurrencyButton />
+      <DeleteCurrencyButton deleteCurrency={deleteCurrency} />
     </div>
   );
 };

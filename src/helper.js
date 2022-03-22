@@ -75,3 +75,11 @@ export const addNewCurrency = (state) => {
   const newCurrencies = currencies.concat([newCurrency]);
   return newCurrencies;
 };
+
+export const removeCurrency = (state, index) => {
+  const { currencies } = state;
+  const firstHalf = currencies.slice(0, index);
+  const secondHalf = currencies.slice(index + 1);
+  const newCurrencies = firstHalf.concat(secondHalf);
+  return newCurrencies;
+};

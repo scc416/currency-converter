@@ -1,5 +1,9 @@
-const DeleteCurrencyButton = () => {
-  return <div className="DeleteCurrencyButton">✕</div>;
+const DeleteCurrencyButton = ({ deleteCurrency }) => {
+  return (
+    <div className="DeleteCurrencyButton" onClick={deleteCurrency}>
+      ✕
+    </div>
+  );
 };
 
 export default DeleteCurrencyButton;

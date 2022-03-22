@@ -7,13 +7,14 @@ const CurrencyListItem = ({
   value,
   updateCurrency,
   updateValue,
+  deleteCurrency
 }) => {
   return (
     <div className="CurrencyListItem">
       <AvailableCurrencyList
         {...{ availableCurrencies, code, updateCurrency }}
       />
-      <ValueInput {...{ value, updateValue }} />
+      <ValueInput {...{ value, updateValue, deleteCurrency }} />
     </div>
   );
 };

@@ -10,6 +10,7 @@ const CurrencyList = () => {
     updateSelectedCurrencies,
     updateValue,
     addCurrency,
+    deleteCurrency,
   } = useData();
 
   const elms = currencies.map(({ code, value }, index) => (
@@ -21,6 +22,7 @@ const CurrencyList = () => {
         value,
         updateCurrency: (code) => updateSelectedCurrencies(index, code),
         updateValue: (value) => updateValue(index, value),
+        deleteCurrency: () => deleteCurrency(index),
       }}
     />
   ));

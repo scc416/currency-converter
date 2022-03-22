@@ -5,12 +5,14 @@ import {
   updateWithNewValue,
   updateWithNewCode,
   addNewCurrency,
+  removeCurrency,
 } from "../helper";
 import {
   INIT_SETUP,
   RECEIVE_NEW_CURRENCY,
   RECEIVE_NEW_VALUE,
   ADD_CURRENCY,
+  REMOVE_CURRENCY,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -42,6 +44,10 @@ const useData = () => {
     },
     [ADD_CURRENCY](state) {
       const newCurrencies = addNewCurrency(state);
+      return { ...state, currencies: newCurrencies };
+    },
+    [REMOVE_CURRENCY](state, { index }) {
+      const newCurrencies = removeCurrency(state, index);
       return { ...state, currencies: newCurrencies };
     },
   };
@@ -78,12 +84,17 @@ const useData = () => {
     dispatch({ type: ADD_CURRENCY });
   };
 
+  const deleteCurrency = (index) => {
+    dispatch({ type: REMOVE_CURRENCY, index });
+  };
+
   return {
     availableCurrencies,
     currencies,
     updateSelectedCurrencies,
     updateValue,
-    addCurrency
+    addCurrency,
+    deleteCurrency,
   };
 };
 
