@@ -74,16 +74,18 @@ const useData = () => {
 
   const { availableCurrencies, currencies, error } = state;
 
-  useEffect(async () => {
-    try {
-      const { data: currencies } = await axios.get(availableCurrenciesURL);
-      const {
-        data: { hkd: rates },
-      } = await axios.get(latestRatesURL);
-      dispatch({ type: INIT_SETUP, currencies, rates });
-    } catch (err) {
-      console.log(err);
-    }
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data: currencies } = await axios.get(availableCurrenciesURL);
+        const {
+          data: { hkd: rates },
+        } = await axios.get(latestRatesURL);
+        dispatch({ type: INIT_SETUP, currencies, rates });
+      } catch (err) {
+        console.log(err);
+      }
+    })();
   }, []);
 
   useEffect(() => {
