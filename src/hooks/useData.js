@@ -5,7 +5,6 @@ import {
   INIT_SETUP,
   RECEIVE_NEW_CURRENCY,
   RECEIVE_NEW_VALUE,
-  RECEIVE_NEW_RATE,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -38,23 +37,6 @@ const useData = () => {
         value
       );
       return { ...state, currencies: newCurrencies, valueInHKD: newValueInHKD };
-    },
-    [RECEIVE_NEW_RATE](state, { index, rates, value }) {
-      const { currencies } = state;
-      const newCurrencies = [...currencies];
-      for (const index in newCurrencies) {
-        const newValue = { ...newCurrencies[index] };
-        const { code } = newValue;
-        const exchangeRate = rates[code];
-        newValue.value = value * exchangeRate;
-        newCurrencies[index] = newValue;
-      }
-      return {
-        ...state,
-        currenctIndex: index,
-        rates,
-        currencies: newCurrencies,
-      };
     },
   };
 
