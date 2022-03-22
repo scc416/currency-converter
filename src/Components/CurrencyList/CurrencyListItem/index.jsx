@@ -1,5 +1,5 @@
-import AvailableCurrencyList from "./AvailableCurrencyList";
-import ValueInput from "./ValueInput";
+import AvailableCurrencyList from "../AvailableCurrencyList";
+import ValueInput from "../ValueInput";
 
 const CurrencyListItem = ({
   availableCurrencies,
