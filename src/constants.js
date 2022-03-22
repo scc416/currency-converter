@@ -6,7 +6,7 @@ export const RECEIVE_NEW_RATE = "RECEIVE_NEW_RATE";
 export const initState = {
   availableCurrencies: [],
   currencies: [
-    { code: "hkd", value: 1 },
+    { code: "hkd", value: 0 },
     { code: "cad", value: 0 },
   ],
   currenctIndex: 0,

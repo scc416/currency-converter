@@ -59,17 +59,22 @@ const useData = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const { availableCurrencies, currencies, currenctIndex } = state;
+  const { availableCurrencies, currencies, currenctIndex, rate } = state;
 
   const newIndex = async (index, value) => {
+    const { code } = currencies[index];
+    const { code: currentCode } = currencies[currenctIndex];
+    const needUpdate = code !== currentCode || rate.length === 0;
+    if (!needUpdate) {
+      return dispatch({ type: RECEIVE_NEW_RATE, index, rate, value });
+    }
     try {
-      const code = currencies[index].code;
       const url = getLatestRateURL(code);
       const {
-        data: { [code]: rate },
+        data: { [code]: newRate },
       } = await axios.get(url);
 
-      dispatch({ type: RECEIVE_NEW_RATE, index, rate, value });
+      dispatch({ type: RECEIVE_NEW_RATE, index, rate: newRate, value });
     } catch (e) {
       console.log(e);
     }
@@ -79,8 +84,7 @@ const useData = () => {
     try {
       const { data } = await axios.get(availableCurrenciesURL);
       dispatch({ type: RECEIVE_AVAILABLE_CURRENCIES, currencies: data });
-
-      newIndex(currenctIndex, currencies[currenctIndex].value);
+      newIndex(0, 1);
     } catch (err) {
       console.log(err);
     }
