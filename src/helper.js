@@ -36,3 +36,24 @@ export const findCurrencyObj = (options, code) => {
     if (found) return currency;
   }
 };
+
+export const updateWithNewValue = (state, index, value) => {
+  const { currencies, rates } = state;
+  const newCurrencies = [...currencies];
+
+  const updatedCurrency = { ...newCurrencies[index], value };
+  const { code: updatedCode } = updatedCurrency;
+  newCurrencies[index] = updatedCurrency;
+
+  const updatedRate = rates[updatedCode];
+  const newValueInHKD = value / updatedRate;
+  console.log(newValueInHKD, updatedRate)
+  for (const index in newCurrencies) {
+    const currency = newCurrencies[index];
+    const { code } = currency;
+    const rate = rates[code];
+    const newCurrency = { code, value: newValueInHKD * rate };
+    newCurrencies[index] = newCurrency;
+  }
+  return { newCurrencies, newValueInHKD };
+};

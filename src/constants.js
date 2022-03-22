@@ -10,10 +10,10 @@ export const initState = {
     { code: "cad", value: 0 },
   ],
   valueInHKD: 1,
-  rate: [],
+  rates: [],
 };
 
-export const latestRateURL =
+export const latestRatesURL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/hkd.json";
 export const availableCurrenciesURL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
