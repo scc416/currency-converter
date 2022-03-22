@@ -1,4 +1,4 @@
-import AvailableCurrencyList from "../AvailableCurrencyList";
+import AvailableCurrencyList from "./AvailableCurrencyList";
 import ValueInput from "../ValueInput";
 
 const CurrencyListItem = ({

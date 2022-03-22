@@ -1,5 +1,5 @@
 import Select from "react-select";
-import { makeDisplayCurrencies, findCurrencyObj } from "../../helper";
+import { makeDisplayCurrencies, findCurrencyObj } from "../../../helper";
 
 const AvailableCurrencyList = ({
   availableCurrencies,
