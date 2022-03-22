@@ -57,3 +57,14 @@ export const updateWithNewValue = (state, index, value) => {
   }
   return { newCurrencies, newValueInHKD };
 };
+
+export const updateWithNewCode = (state, index, code) => {
+  const { currencies, rates, valueInHKD } = state;
+  const newCurrencies = [...currencies];
+
+  const rate = rates[code];
+  const updatedCurrency = { code, value: rate * valueInHKD };
+  newCurrencies[index] = updatedCurrency;
+
+  return newCurrencies;
+};

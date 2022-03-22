@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useReducer, useEffect } from "react";
-import { makeAvailableCurrencyLst, updateWithNewValue } from "../helper";
+import {
+  makeAvailableCurrencyLst,
+  updateWithNewValue,
+  updateWithNewCode,
+} from "../helper";
 import {
   INIT_SETUP,
   RECEIVE_NEW_CURRENCY,
@@ -23,11 +27,7 @@ const useData = () => {
       };
     },
     [RECEIVE_NEW_CURRENCY](state, { index, code }) {
-      const { currencies } = state;
-      const newCurrencies = [...currencies];
-      const newCurrency = { ...newCurrencies[index] };
-      newCurrency.code = code;
-      newCurrencies[index] = newCurrencies;
+      const newCurrencies = updateWithNewCode(state, index, code);
       return { ...state, currencies: newCurrencies };
     },
     [RECEIVE_NEW_VALUE](state, { index, value }) {
