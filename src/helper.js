@@ -47,7 +47,7 @@ export const updateWithNewValue = (state, index, value) => {
 
   const updatedRate = rates[updatedCode];
   const newValueInHKD = value / updatedRate;
-  console.log(newValueInHKD, updatedRate)
+
   for (const index in newCurrencies) {
     const currency = newCurrencies[index];
     const { code } = currency;
