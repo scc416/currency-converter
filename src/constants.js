@@ -14,12 +14,13 @@ export const ERROR_TOO_LESS_CURRENCIES = `You need at least ${MIN_NUM_CURRENCIES
 
 export const INIT_VALUE = 1;
 export const INIT_INDEX = 0;
+export const INIT_RATE = 1;
 
 export const initState = {
   availableCurrencies: [],
   currencies: [
     { code: "hkd", value: INIT_VALUE },
-    { code: "cad", value: null },
+    { code: "cad", value: INIT_VALUE },
   ],
   value: INIT_VALUE,
   rate: null,

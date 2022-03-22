@@ -24,13 +24,14 @@ import {
   availableCurrenciesURL,
   latestRatesURL,
   initState,
+  INIT_RATE,
 } from "../constants";
 
 const useData = () => {
   const reducers = {
     [INIT_SETUP](state, { currencies, rates }) {
       const { newCurrencies } = updateWithNewValue(
-        { ...state, rates },
+        { ...state, rates, rate: INIT_RATE },
         INIT_INDEX,
         INIT_VALUE
       );
@@ -40,6 +41,8 @@ const useData = () => {
         rates,
         currencies: newCurrencies,
         availableCurrencies: newAvailableCurrencies,
+        value: INIT_VALUE,
+        rate: INIT_RATE,
       };
     },
     [RECEIVE_NEW_CURRENCY](state, { index, code }) {
