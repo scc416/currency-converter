@@ -68,3 +68,10 @@ export const updateWithNewCode = (state, index, code) => {
 
   return newCurrencies;
 };
+
+export const addNewCurrency = (state) => {
+  const { currencies, valueInHKD } = state;
+  const newCurrency = { code: "hkd", value: valueInHKD };
+  const newCurrencies = currencies.concat([newCurrency]);
+  return newCurrencies;
+};

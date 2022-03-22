@@ -1,6 +1,7 @@
 export const INIT_SETUP = "INIT_SETUP";
 export const RECEIVE_NEW_CURRENCY = "RECEIVE_NEW_CURRENCY";
 export const RECEIVE_NEW_VALUE = "RECEIVE_NEW_VALUE";
+export const ADD_CURRENCY = "ADD_CURRENCY";
 
 export const initState = {
   availableCurrencies: [],

@@ -4,11 +4,13 @@ import {
   makeAvailableCurrencyLst,
   updateWithNewValue,
   updateWithNewCode,
+  addNewCurrency,
 } from "../helper";
 import {
   INIT_SETUP,
   RECEIVE_NEW_CURRENCY,
   RECEIVE_NEW_VALUE,
+  ADD_CURRENCY,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -37,6 +39,10 @@ const useData = () => {
         value
       );
       return { ...state, currencies: newCurrencies, valueInHKD: newValueInHKD };
+    },
+    [ADD_CURRENCY](state) {
+      const newCurrencies = addNewCurrency(state);
+      return { ...state, currencies: newCurrencies };
     },
   };
 
@@ -68,11 +74,16 @@ const useData = () => {
     dispatch({ type: RECEIVE_NEW_VALUE, index, value });
   };
 
+  const addCurrency = () => {
+    dispatch({ type: ADD_CURRENCY });
+  };
+
   return {
     availableCurrencies,
     currencies,
     updateSelectedCurrencies,
     updateValue,
+    addCurrency
   };
 };
 
