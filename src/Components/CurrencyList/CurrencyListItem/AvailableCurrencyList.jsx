@@ -3,7 +3,7 @@ import { makeDisplayCurrencies, findCurrencyObj } from "../../../helper";
 
 const AvailableCurrencyList = ({
   availableCurrencies,
-  code: selectedCode,
+  code,
   updateCurrency,
 }) => {
   const displayedCurrencies = makeDisplayCurrencies(availableCurrencies);
@@ -11,7 +11,7 @@ const AvailableCurrencyList = ({
     return { value: code, label: displayedStr };
   });
 
-  const value = findCurrencyObj(options, selectedCode);
+  const value = findCurrencyObj(options, code);
 
   return (
     <Select

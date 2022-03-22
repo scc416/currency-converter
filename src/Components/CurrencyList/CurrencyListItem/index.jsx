@@ -7,7 +7,7 @@ const CurrencyListItem = ({
   value,
   updateCurrency,
   updateValue,
-  deleteCurrency
+  deleteCurrency,
 }) => {
   return (
     <div className="CurrencyListItem">

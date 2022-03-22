@@ -14,7 +14,7 @@ const CurrencyList = () => {
     error,
   } = useData();
 
-  const elms = currencies.map(({ code, value }, index) => (
+  const currenciesElms = currencies.map(({ code, value }, index) => (
     <CurrencyListItem
       {...{
         key: index,
@@ -30,7 +30,8 @@ const CurrencyList = () => {
 
   return (
     <div className="CurrencyList">
-      {elms} <Control addCurrency={addCurrency} error={error} />
+      {currenciesElms}
+      <Control {...{ addCurrency, error }} />
     </div>
   );
 };

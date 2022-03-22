@@ -4,9 +4,11 @@ const ValueInput = ({ value, updateValue, deleteCurrency }) => {
   return (
     <div className="ValueInput">
       <input
-        value={value}
-        onChange={(e) => updateValue(e.target.value)}
-        type="number"
+        {...{
+          value,
+          type: "number",
+          onChange: (e) => updateValue(e.target.value),
+        }}
       />
       <DeleteCurrencyButton deleteCurrency={deleteCurrency} />
     </div>
