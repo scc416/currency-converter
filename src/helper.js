@@ -36,3 +36,7 @@ export const findCurrencyObj = (options, code) => {
     if (found) return currency;
   }
 };
+
+export const getLatestRateURL = (code) => {
+  return `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${code}.json`;
+};
