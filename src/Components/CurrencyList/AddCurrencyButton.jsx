@@ -1,5 +1,9 @@
-const AddCurrencyButtom = () => {
-  return <div className="AddCurrencyBottom">+ Add Currency</div>
-}
+const AddCurrencyButtom = ({ addCurrency }) => {
+  return (
+    <div className="AddCurrencyBottom" onClick={addCurrency}>
+      + Add Currency
+    </div>
+  );
+};
 
 export default AddCurrencyButtom;

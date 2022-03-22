@@ -9,6 +9,7 @@ const CurrencyList = () => {
     currencies,
     updateSelectedCurrencies,
     updateValue,
+    addCurrency,
   } = useData();
 
   const elms = currencies.map(({ code, value }, index) => (
@@ -26,7 +27,7 @@ const CurrencyList = () => {
 
   return (
     <div className="CurrencyList">
-      {elms} <AddCurrencyButtom />
+      {elms} <AddCurrencyButtom addCurrency={addCurrency} />
     </div>
   );
 };
