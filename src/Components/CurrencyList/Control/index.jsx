@@ -1,4 +1,4 @@
-import AddCurrencyButtom from "./AddCurrencyButton";
+import AddCurrencyButtom from "../AddCurrencyButton";
 
 const Control = ({ addCurrency }) => {
   return (
