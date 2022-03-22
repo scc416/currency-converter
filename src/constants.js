@@ -10,7 +10,8 @@ export const initState = {
     { code: "hkd", value: 1 },
     { code: "cad", value: 0 },
   ],
-  valueInHKD: 1,
+  value: 1,
+  rate: 1,
   rates: [],
 };
 

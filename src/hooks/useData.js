@@ -21,7 +21,8 @@ import {
 const useData = () => {
   const reducers = {
     [INIT_SETUP](state, { currencies, rates }) {
-      const { newCurrencies } = updateWithNewValue({ ...state, rates }, 0, 1);
+      const newCurrencies = updateWithNewValue({ ...state, rates }, 0, 1);
+      console.log(newCurrencies)
       const newAvailableCurrencies = makeAvailableCurrencyLst(currencies);
       return {
         ...state,

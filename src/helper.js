@@ -37,33 +37,41 @@ export const findCurrencyObj = (options, code) => {
   }
 };
 
-export const updateWithNewValue = (state, index, value) => {
+const getRate = (state, index) => {
   const { currencies, rates } = state;
+  const { code } = currencies[index];
+  return rates[code];
+};
+
+const getCode = (state, index) => {
+  const { currencies } = state;
+  const { code } = currencies[index];
+  return code;
+};
+
+const getInfo = (state, index, newRate, value) => {
+  const rate = getRate(state, index);
+  const code = getCode(state, index);
+  return { value: (rate / newRate) * value, code };
+};
+
+export const updateWithNewValue = (state, index, value) => {
+  const { currencies } = state;
   const newCurrencies = [...currencies];
-
-  const updatedCurrency = { ...newCurrencies[index], value };
-  const { code: updatedCode } = updatedCurrency;
-  newCurrencies[index] = updatedCurrency;
-
-  const updatedRate = rates[updatedCode];
-  const newValueInHKD = value / updatedRate;
-
+  const newRate = getRate(state, index);
   for (const index in newCurrencies) {
-    const currency = newCurrencies[index];
-    const { code } = currency;
-    const rate = rates[code];
-    const newCurrency = { code, value: newValueInHKD * rate };
-    newCurrencies[index] = newCurrency;
+    const newObj = getInfo(state, index, newRate, value);
+    newCurrencies[index] = newObj;
   }
-  return { newCurrencies, newValueInHKD };
+  return newCurrencies;
 };
 
 export const updateWithNewCode = (state, index, code) => {
-  const { currencies, rates, valueInHKD } = state;
+  const { currencies, rates } = state;
   const newCurrencies = [...currencies];
 
   const rate = rates[code];
-  const updatedCurrency = { code, value: rate * valueInHKD };
+  const updatedCurrency = { code, value: rate };
   newCurrencies[index] = updatedCurrency;
 
   return newCurrencies;
