@@ -75,6 +75,10 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.Error {
+  color: #cc0000;
+}
+
 @media (min-width: 420px) {
   .CurrencyList {
     font-size: 3vw;

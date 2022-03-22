@@ -1,5 +1,5 @@
 const ErrorMessage = ({ error }) => {
-  return <div>{error}</div>;
+  return <div className="Error">{error}</div>;
 };
 
 export default ErrorMessage;
