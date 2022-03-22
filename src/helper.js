@@ -49,7 +49,7 @@ const getCode = (state, index) => {
   return code;
 };
 
-const getInfo = (state, index, newRate, value) => {
+const makeNewCurrency = (state, index, newRate, value) => {
   const rate = getRate(state, index);
   const code = getCode(state, index);
   return { value: (rate / newRate) * value, code };
@@ -61,7 +61,7 @@ export const updateWithNewValue = (state, index, value) => {
 
   const newRate = getRate(state, index);
   for (const index in newCurrencies) {
-    const newObj = getInfo(state, index, newRate, value);
+    const newObj = makeNewCurrency(state, index, newRate, value);
     newCurrencies[index] = newObj;
   }
   return { newCurrencies, rate: newRate };
