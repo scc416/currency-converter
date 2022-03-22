@@ -50,7 +50,6 @@ const useData = () => {
     },
     [REMOVE_ERROR](state) {
       return { ...state, error: null };
-      return state;
     },
     [SET_ERROR](state, { error }) {
       return { ...state, error };
