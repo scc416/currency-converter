@@ -1,12 +1,12 @@
+import AddCurrencyButtom from "./AddCurrencyButton";
+
 const Control = ({ addCurrency }) => {
   return (
     <div>
-      <div className="AddCurrencyBottom" onClick={addCurrency}>
-        + Add Currency
-      </div>
+      <AddCurrencyButtom addCurrency={addCurrency} />
       <div>Error</div>
     </div>
   );
 };
 
-export default Contorl;
+export default Control;

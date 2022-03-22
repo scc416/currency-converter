@@ -1,6 +1,6 @@
 import "./Currency.css";
 import CurrencyListItem from "./CurrencyListItem";
-import Contorl from "./Control";
+import Control from "./Control";
 import useData from "../../hooks/useData";
 
 const CurrencyList = () => {
