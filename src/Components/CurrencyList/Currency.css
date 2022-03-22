@@ -52,11 +52,14 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.AddCurrencyBottom {
+.Control {
   align-self: flex-start;
   font-size: 0.7em;
   position: relative;
   top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .AddCurrencyBottom:hover {

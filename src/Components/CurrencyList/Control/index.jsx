@@ -1,10 +1,11 @@
 import AddCurrencyButtom from "./AddCurrencyButton";
+import ErrorMessage from "./ErrorMessage";
 
 const Control = ({ addCurrency }) => {
   return (
-    <div>
+    <div className="Control">
       <AddCurrencyButtom addCurrency={addCurrency} />
-      <div>Error</div>
+      <ErrorMessage error="ERROR" />
     </div>
   );
 };

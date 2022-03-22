@@ -1,4 +1,4 @@
-import DeleteCurrencyButton from "./DeleteCurrencyButton";
+import DeleteCurrencyButton from "./CurrencyListItem/DeleteCurrencyButton";
 
 const ValueInput = ({ value, updateValue, deleteCurrency }) => {
   return (
