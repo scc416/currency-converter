@@ -63,20 +63,6 @@ const useData = () => {
 
   const { availableCurrencies, currencies, currenctIndex, rate } = state;
 
-  const newIndex = async (index, value) => {
-    const { code } = currencies[index];
-    const { code: currentCode } = currencies[currenctIndex];
-    const needUpdate = code !== currentCode || rate.length === 0;
-    if (!needUpdate) {
-      return dispatch({ type: RECEIVE_NEW_RATE, index, rate, value });
-    }
-    try {
-      dispatch({ type: RECEIVE_NEW_RATE, index, rate: newRate, value });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(async () => {
     try {
       const { data: currencies } = await axios.get(availableCurrenciesURL);
@@ -95,7 +81,6 @@ const useData = () => {
 
   const updateValue = (index, value) => {
     dispatch({ type: RECEIVE_NEW_VALUE, index, value });
-    newIndex(index, value);
   };
 
   return {
