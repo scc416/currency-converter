@@ -19,6 +19,7 @@ const AvailableCurrencyList = ({
         value,
         options,
         isSearchable: true,
+        menuPlacement: "auto",
         onChange: (e) => updateCurrency(e.value),
       }}
     />
