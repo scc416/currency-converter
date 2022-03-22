@@ -4,7 +4,7 @@ const Title = () => {
   return (
     <div className="Title">
       Currency converter
-      <img src="/favicon.png" />
+      <img src="/favicon.png" alt="dollar" />
     </div>
   );
 };
