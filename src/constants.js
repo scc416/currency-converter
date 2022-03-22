@@ -1,6 +1,7 @@
 export const RECEIVE_AVAILABLE_CURRENCIES = "RECEIVE_AVAILABLE_CURRENCIES";
 export const RECEIVE_NEW_CURRENCY = "RECEIVE_NEW_CURRENCY";
 export const RECEIVE_NEW_VALUE = "RECEIVE_NEW_VALUE";
+export const RECEIVE_NEW_RATE = "RECEIVE_NEW_RATE";
 
 export const initState = {
   availableCurrencies: [],
@@ -8,7 +9,7 @@ export const initState = {
     { code: "hkd", value: 1 },
     { code: "cad", value: 0 },
   ],
-  currenctCode: 0,
+  currenctIndex: 0,
   rate: [],
 };
 
