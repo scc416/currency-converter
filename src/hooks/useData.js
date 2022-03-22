@@ -21,8 +21,7 @@ import {
 const useData = () => {
   const reducers = {
     [INIT_SETUP](state, { currencies, rates }) {
-      const newCurrencies = updateWithNewValue({ ...state, rates }, 0, 1);
-      console.log(newCurrencies)
+      const { newCurrencies } = updateWithNewValue({ ...state, rates }, 0, 1);
       const newAvailableCurrencies = makeAvailableCurrencyLst(currencies);
       return {
         ...state,
@@ -36,12 +35,8 @@ const useData = () => {
       return { ...state, currencies: newCurrencies };
     },
     [RECEIVE_NEW_VALUE](state, { index, value }) {
-      const { newCurrencies, newValueInHKD } = updateWithNewValue(
-        state,
-        index,
-        value
-      );
-      return { ...state, currencies: newCurrencies, valueInHKD: newValueInHKD };
+      const { newCurrencies, rate } = updateWithNewValue(state, index, value);
+      return { ...state, currencies: newCurrencies, value, rate };
     },
     [ADD_CURRENCY](state) {
       const newCurrencies = addNewCurrency(state);
