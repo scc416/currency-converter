@@ -3,6 +3,8 @@ export const RECEIVE_NEW_CURRENCY = "RECEIVE_NEW_CURRENCY";
 export const RECEIVE_NEW_VALUE = "RECEIVE_NEW_VALUE";
 export const ADD_CURRENCY = "ADD_CURRENCY";
 export const REMOVE_CURRENCY = "REMOVE_CURRENCY";
+export const SET_ERROR = "SET_ERROR";
+export const REMOVE_ERROR = "REMOVE_ERROR";
 
 export const initState = {
   availableCurrencies: [],
@@ -13,6 +15,7 @@ export const initState = {
   value: 1,
   rate: 1,
   rates: [],
+  error: null,
 };
 
 export const latestRatesURL =

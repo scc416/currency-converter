@@ -13,6 +13,8 @@ import {
   RECEIVE_NEW_VALUE,
   ADD_CURRENCY,
   REMOVE_CURRENCY,
+  REMOVE_ERROR,
+  SET_ERROR,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -46,6 +48,13 @@ const useData = () => {
       const newCurrencies = removeCurrency(state, index);
       return { ...state, currencies: newCurrencies };
     },
+    [REMOVE_ERROR](state) {
+      return { ...state, error: null };
+      return state;
+    },
+    [SET_ERROR](state, { error }) {
+      return { ...state, error };
+    },
   };
 
   const reducer = (state, action) => {
@@ -54,7 +63,8 @@ const useData = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const { availableCurrencies, currencies, currenctIndex, rates } = state;
+  const { availableCurrencies, currencies, currenctIndex, rates, error } =
+    state;
 
   useEffect(async () => {
     try {
@@ -63,10 +73,18 @@ const useData = () => {
         data: { hkd: rates },
       } = await axios.get(latestRatesURL);
       dispatch({ type: INIT_SETUP, currencies, rates });
+      dispatch({ type: SET_ERROR, error: "HELLO" });
     } catch (err) {
       console.log(err);
     }
   }, []);
+
+  useEffect(() => {
+    if (error) {
+      const removeError = setTimeout(() => dispatch({ type: REMOVE_ERROR }), 2500);
+      return () => clearTimeout(removeError);
+    }
+  }, [error]);
 
   const updateSelectedCurrencies = (index, code) => {
     dispatch({ type: RECEIVE_NEW_CURRENCY, index, code });
@@ -91,6 +109,7 @@ const useData = () => {
     updateValue,
     addCurrency,
     deleteCurrency,
+    error,
   };
 };
 
