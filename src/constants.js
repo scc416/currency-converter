@@ -9,6 +9,7 @@ export const initState = {
     { code: "cad", value: 0 },
   ],
   currenctCode: 0,
+  rate: [],
 };
 
 export const availableCurrenciesURL =
