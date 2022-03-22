@@ -6,13 +6,14 @@ const CurrencyListItem = ({
   code,
   value,
   updateCurrency,
+  updateValue,
 }) => {
   return (
     <div className="CurrencyListItem">
       <AvailableCurrencyList
         {...{ availableCurrencies, code, updateCurrency }}
       />
-      <ValueInput {...{ value }} />
+      <ValueInput {...{ value, updateValue }} />
     </div>
   );
 };

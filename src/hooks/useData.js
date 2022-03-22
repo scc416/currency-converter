@@ -4,6 +4,7 @@ import { makeAvailableCurrencyLst } from "../helper";
 import {
   RECEIVE_AVAILABLE_CURRENCIES,
   RECEIVE_NEW_CURRENCY,
+  RECEIVE_NEW_VALUE,
   availableCurrenciesURL,
   initState,
 } from "../constants";
@@ -16,12 +17,20 @@ const useData = () => {
         availableCurrencies: makeAvailableCurrencyLst(currencies),
       };
     },
-    [RECEIVE_NEW_CURRENCY](state, { number, code }) {
+    [RECEIVE_NEW_CURRENCY](state, { index, code }) {
       const { currencies } = state;
       const newCurrencies = [...currencies];
-      const newCurrency = { ...newCurrencies[number] };
+      const newCurrency = { ...newCurrencies[index] };
       newCurrency.code = code;
-      newCurrencies[number] = newCurrencies;
+      newCurrencies[index] = newCurrencies;
+      return { ...state, currencies: newCurrencies };
+    },
+    [RECEIVE_NEW_VALUE](state, { index, value }) {
+      const { currencies } = state;
+      const newCurrencies = [...currencies];
+      const newValue = { ...newCurrencies[index] };
+      newValue.value = value;
+      newCurrencies[index] = newValue;
       return { ...state, currencies: newCurrencies };
     },
   };
@@ -41,13 +50,22 @@ const useData = () => {
     }
   }, []);
 
-  const updateSelectedCurrencies = (number, code) => {
-    dispatch({ type: RECEIVE_NEW_CURRENCY, number, code });
+  const updateSelectedCurrencies = (index, code) => {
+    dispatch({ type: RECEIVE_NEW_CURRENCY, index, code });
+  };
+
+  const updateValue = (index, value) => {
+    dispatch({ type: RECEIVE_NEW_VALUE, index, value });
   };
 
   const { availableCurrencies, currencies } = state;
 
-  return { availableCurrencies, currencies, updateSelectedCurrencies };
+  return {
+    availableCurrencies,
+    currencies,
+    updateSelectedCurrencies,
+    updateValue,
+  };
 };
 
 export default useData;

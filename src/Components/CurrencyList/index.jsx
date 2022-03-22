@@ -4,8 +4,12 @@ import AddCurrencyButtom from "./AddCurrencyButton";
 import useData from "../../hooks/useData";
 
 const CurrencyList = () => {
-  const { availableCurrencies, currencies, updateSelectedCurrencies } =
-    useData();
+  const {
+    availableCurrencies,
+    currencies,
+    updateSelectedCurrencies,
+    updateValue,
+  } = useData();
 
   const elms = currencies.map(({ code, value }, index) => (
     <CurrencyListItem
@@ -15,6 +19,7 @@ const CurrencyList = () => {
         code,
         value,
         updateCurrency: (code) => updateSelectedCurrencies(index, code),
+        updateValue: (value) => updateValue(index, value),
       }}
     />
   ));
