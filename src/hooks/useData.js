@@ -19,6 +19,8 @@ import {
   ERROR_TOO_LESS_CURRENCIES,
   INIT_VALUE,
   INIT_INDEX,
+  MAX_NUM_CURRENCIES,
+  MIN_NUM_CURRENCIES,
   availableCurrenciesURL,
   latestRatesURL,
   initState,
@@ -108,7 +110,7 @@ const useData = () => {
   };
 
   const addCurrency = () => {
-    const tooManyCurrencies = currencies.length >= 10;
+    const tooManyCurrencies = currencies.length >= MAX_NUM_CURRENCIES;
     if (tooManyCurrencies) {
       return dispatch({ type: SET_ERROR, error: ERROR_TOO_MANY_CURRENCIES });
     }
@@ -116,7 +118,7 @@ const useData = () => {
   };
 
   const deleteCurrency = (index) => {
-    const toLessCurrencies = currencies.length <= 2;
+    const toLessCurrencies = currencies.length <= MIN_NUM_CURRENCIES;
     if (toLessCurrencies) {
       return dispatch({ type: SET_ERROR, error: ERROR_TOO_LESS_CURRENCIES });
     }

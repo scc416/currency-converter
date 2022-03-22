@@ -6,8 +6,11 @@ export const REMOVE_CURRENCY = "REMOVE_CURRENCY";
 export const SET_ERROR = "SET_ERROR";
 export const REMOVE_ERROR = "REMOVE_ERROR";
 
-export const ERROR_TOO_MANY_CURRENCIES = "You can have at most 10 currencies.";
-export const ERROR_TOO_LESS_CURRENCIES = "You need at least 2 currencies";
+export const MAX_NUM_CURRENCIES = 10;
+export const MIN_NUM_CURRENCIES = 2;
+
+export const ERROR_TOO_MANY_CURRENCIES = `You can have at most ${MAX_NUM_CURRENCIES} currencies.`;
+export const ERROR_TOO_LESS_CURRENCIES = `You need at least ${MIN_NUM_CURRENCIES} currencies`;
 
 export const INIT_VALUE = 1;
 export const INIT_INDEX = 0;
@@ -16,7 +19,7 @@ export const initState = {
   availableCurrencies: [],
   currencies: [
     { code: "hkd", value: INIT_VALUE },
-    { code: "cad", value: 0 },
+    { code: "cad", value: null },
   ],
   value: INIT_VALUE,
   rate: null,
