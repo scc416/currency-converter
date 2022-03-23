@@ -40,10 +40,7 @@ User can:
 <pre>
 📦currency-converter
  ┣ 📂docs
- ┃ ┗ 📜ui.png
  ┣ 📂public
- ┃ ┣ 📜favicon.png
- ┃ ┗ 📜index.html
  ┣ 📂src
  ┃ ┣ 📂Components
  ┃ ┃ ┣ 📂CurrencyList
@@ -80,35 +77,51 @@ User can:
 
 ### 📂 docs
 
-Store image that is displayed in this `README.md` document. This image are not included on the diagram above.
+Store image that is displayed in this `README.md` document.
 
 ### 📂public
 
-Contains `index.html` (react components are rendered on this file), the favicon and other images for the web app.
+Contains `index.html` (react components are rendered on this file)and the favicon `favicon.png` (which is also an image in the web app) for the web app.
 
-### 📂src
+### 📂 src
 
-#### 📂Components
+#### 📂 Components
 
 Contains react components.
 
-#### 📂hooks
+#### 📂 hooks
 
-Contains hooks.
+Contains custom hook `useData`.
 
-#### 📜index.js
+#### 📜 `App.css`
+
+The style sheet for `App.js`
+
+#### 📜 `App.js`
+
+The top level component.
+
+#### 📜 `constants.js`
+
+Contain constants that are used by other files.
+
+#### 📜 `helper.js`
+
+Contain helper functions for other files.
+
+#### 📜 `index.js`
 
 This file renders react components onto `index.html`.
 
-### 📜 .gitignore
+### 📜 `.gitignore`
 
 This file is to ignore certain files so they are not pushed to github.
 
-### 📜 README.md
+### 📜 `README.md`
 
 This document that you are reading.
 
-### 📜 package.json
+### 📜 `package.json`
 
 This file contains:
 
