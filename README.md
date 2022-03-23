@@ -1,5 +1,16 @@
 # Currency Converter
 
+## Table of Content
+
+- [Live Demo](#live-demo)
+- [Final Product](#final-product)
+- [About the Game](#about-the-game)
+- [Custom hook: useGame](#custom-hook-usegame)
+- [Dependencies](#dependencies)
+- [Getting Started](#getting-started)
+- [File Structure](#file-structure)
+- [Credits](#credits)
+
 ## Credits
 
 - [Currency API](https://github.com/fawazahmed0/currency-api) by [Fawaz Ahmed (@fawazahmed0)](https://github.com/fawazahmed0)
