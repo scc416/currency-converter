@@ -1,5 +1,7 @@
 # Currency Converter
 
+A currency converter that displayed multiple currencies on one page. Each currency has a seperated number input. When user enter a new value into any input, that would be converted into all other currencies.
+
 ## Table of Content
 
 - [Live Demo](#live-demo)
