@@ -27,6 +27,10 @@ User can:
 
 ## Dependencies
 
+- [React](reactjs.org/)
+- [React Select](https://react-select.com/home)
+- [axios](https://axios-http.com/)
+
 ## Getting Started
 
 1. Clone or download this repository onto your local device.
