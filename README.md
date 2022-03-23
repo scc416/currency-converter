@@ -18,6 +18,12 @@ https://that-currency-converter.netlify.app/
 
 ![User Interface](./docs/ui.png)
 
+## Dependencies
+
+## Getting Started
+
+## File Structure
+
 ## Credits
 
 - [Currency API](https://github.com/fawazahmed0/currency-api) by [Fawaz Ahmed (@fawazahmed0)](https://github.com/fawazahmed0)
