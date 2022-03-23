@@ -22,8 +22,8 @@ https://that-currency-converter.netlify.app/
 User can:
 
 - Enter a new value into any input, it will be converted to all other currencies
-- Add currency (Max: 10) by click "Add Currency"
-- Remove currency (Min: 2) by clicking on the cross at the end of the currency
+- Add currency (max: 10) by click "Add Currency"
+- Remove currency (min: 2) by clicking on the cross at the end of the currency
 
 ## Dependencies
 
