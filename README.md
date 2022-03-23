@@ -75,13 +75,9 @@ Contains `index.html` (react components are rendered on this file), the favicon 
 
 ### 📂src
 
-#### 📂components
+#### 📂Components
 
 Contains react components, style sheets (scss files) and unit tests for components ([Jest](https://jestjs.io/)).
-
-#### 📂helpers
-
-Contains helper functions and their unit tests ([Jest](https://jestjs.io/)).
 
 #### 📂hooks
 
