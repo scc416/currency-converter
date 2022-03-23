@@ -1,6 +1,6 @@
 # Currency Converter
 
-A currency converter that displayed multiple currencies on one page. Each currency has a seperated number input. When user enter a new value into any input, that would be converted into all other currencies.
+A currency converter that displayed multiple currencies on one page. Each currency has a seperated number input. When user enter a new value into an input, it would be converted to all other currencies.
 
 ## Table of Content
 
@@ -18,7 +18,12 @@ https://that-currency-converter.netlify.app/
 
 ## Final Product
 
-![User Interface](./docs/ui.png)
+![User Interface](./docs/ui.png)  
+User can:
+
+- Enter a new value into any input, it will be converted to all other currencies
+- Add currency (Max: 10) by click "Add Currency"
+- Remove currency (Min: 2) by clicking on the cross at the end of the currency
 
 ## Dependencies
 
