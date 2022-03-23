@@ -11,6 +11,11 @@
 - [File Structure](#file-structure)
 - [Credits](#credits)
 
+## Live Demo
+
+The web app is deployed to [Netlify](https://www.netlify.com):  
+https://that-currency-converter.netlify.app/
+
 ## Credits
 
 - [Currency API](https://github.com/fawazahmed0/currency-api) by [Fawaz Ahmed (@fawazahmed0)](https://github.com/fawazahmed0)
