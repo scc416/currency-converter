@@ -77,11 +77,11 @@ Contains `index.html` (react components are rendered on this file), the favicon 
 
 #### 📂Components
 
-Contains react components, style sheets (scss files) and unit tests for components ([Jest](https://jestjs.io/)).
+Contains react components.
 
 #### 📂hooks
 
-Contains hooks and their unit tests ([Jest](https://jestjs.io/)).
+Contains hooks.
 
 #### 📜index.js
 
@@ -100,7 +100,6 @@ This document that you are reading.
 This file contains:
 
 - the list of dependencies (node libraries that the executable code (and development code) needs)
-- dev-dependencies: node libraries only needed by development tools
 - scripts: Define the in-project shortcut commands
 
 ## Credits
