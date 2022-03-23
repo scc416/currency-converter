@@ -1,6 +1,6 @@
 # Currency Converter
 
-A currency converter that displayed multiple currencies on one page. Each currency has a seperated number input. When user enter a new value into an input, it would be converted to all other currencies.
+A currency converter that displayed multiple currencies on one page. Each currency has a seperated number input. When user enter a new value into an input, it would be converted to all other selected currencies.
 
 ## Table of Content
 
