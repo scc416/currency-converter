@@ -24,6 +24,89 @@ https://that-currency-converter.netlify.app/
 
 ## File Structure
 
+<pre>
+📦currency-converter
+ ┣ 📂docs
+ ┃ ┗ 📜ui.png
+ ┣ 📂public
+ ┃ ┣ 📜favicon.png
+ ┃ ┗ 📜index.html
+ ┣ 📂src
+ ┃ ┣ 📂Components
+ ┃ ┃ ┣ 📂CurrencyList
+ ┃ ┃ ┃ ┣ 📂Control
+ ┃ ┃ ┃ ┃ ┣ 📜AddCurrencyButton.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜ErrorMessage.jsx
+ ┃ ┃ ┃ ┃ ┗ 📜index.jsx
+ ┃ ┃ ┃ ┣ 📂CurrencyListItem
+ ┃ ┃ ┃ ┃ ┣ 📜AvailableCurrencyList.jsx
+ ┃ ┃ ┃ ┃ ┣ 📜DeleteCurrencyButton.jsx
+ ┃ ┃ ┃ ┃ ┗ 📜index.jsx
+ ┃ ┃ ┃ ┣ 📜Currency.css
+ ┃ ┃ ┃ ┣ 📜ValueInput.jsx
+ ┃ ┃ ┃ ┗ 📜index.jsx
+ ┃ ┃ ┗ 📂Title
+ ┃ ┃ ┃ ┣ 📜Title.css
+ ┃ ┃ ┃ ┗ 📜index.jsx
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┗ 📜useData.js
+ ┃ ┣ 📜App.css
+ ┃ ┣ 📜App.js
+ ┃ ┣ 📜App.test.js
+ ┃ ┣ 📜constants.js
+ ┃ ┣ 📜helper.js
+ ┃ ┣ 📜index.js
+ ┃ ┣ 📜reportWebVitals.js
+ ┃ ┗ 📜setupTests.js
+ ┣ 📜.gitignore
+ ┣ 📜LICENSE
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┗ 📜package.json
+</pre>
+
+### 📂 docs
+
+Store image that is displayed in this `README.md` document. This image are not included on the diagram above.
+
+### 📂public
+
+Contains `index.html` (react components are rendered on this file), the favicon and other images for the web app.
+
+### 📂src
+
+#### 📂components
+
+Contains react components, style sheets (scss files) and unit tests for components ([Jest](https://jestjs.io/)).
+
+#### 📂helpers
+
+Contains helper functions and their unit tests ([Jest](https://jestjs.io/)).
+
+#### 📂hooks
+
+Contains hooks and their unit tests ([Jest](https://jestjs.io/)).
+
+#### 📜index.js
+
+This file renders react components onto `index.html`.
+
+### 📜 .gitignore
+
+This file is to ignore certain files so they are not pushed to github.
+
+### 📜 README.md
+
+This document that you are reading.
+
+### 📜 package.json
+
+This file contains:
+
+- the list of dependencies (node libraries that the executable code (and development code) needs)
+- dev-dependencies: node libraries only needed by development tools
+- scripts: Define the in-project shortcut commands
+
 ## Credits
 
 - [Currency API](https://github.com/fawazahmed0/currency-api) by [Fawaz Ahmed (@fawazahmed0)](https://github.com/fawazahmed0)
