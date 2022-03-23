@@ -22,6 +22,12 @@ https://that-currency-converter.netlify.app/
 
 ## Getting Started
 
+1. Clone or download this repository onto your local device.
+2. `cd` to the folder where this project is cloned.
+3. Install all dependencies with `npm install` command.
+4. Run the app in the development mode with `npm start` command.
+5. Open the broswer and visit: [http://localhost:3000/](http://localhost:3000/).
+
 ## File Structure
 
 <pre>
