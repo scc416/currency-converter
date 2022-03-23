@@ -22,7 +22,7 @@ https://that-currency-converter.netlify.app/
 User can:
 
 - Enter a new value into any input, it will be converted to all other currencies
-- Update currency by searching/selecting on the dropdown menu, the corresponding value will be updated according to the exchange rate of the new selected currency
+- Update currency by searching/selecting on the dropdown menu, the corresponding value will be updated according to the exchange rate of the newly selected currency
 - Add currency (max: 10) by click "Add Currency"
 - Remove currency (min: 2) by clicking on the cross at the end of the currency
 
