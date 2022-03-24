@@ -19,18 +19,13 @@
   max-width: 100%;
 }
 
-.ValueInput {
-  display: flex;
-  align-items: center;
-  flex-shrink: 1;
-}
-
 .CurrencyListItem img {
   height: 0.5em;
   margin-left: 0.5em;
 }
 
 input {
+  min-width: 0;
   flex-shrink: 1;
   font-size: 16.8px;
   height: 1.5em;

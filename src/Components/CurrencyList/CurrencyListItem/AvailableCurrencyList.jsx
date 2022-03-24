@@ -17,6 +17,7 @@ const AvailableCurrencyList = ({
     container: (base) => ({
       ...base,
       minWidth: "10em",
+      maxWidth: "70%",
     }),
     menu: (base) => ({
       ...base,
