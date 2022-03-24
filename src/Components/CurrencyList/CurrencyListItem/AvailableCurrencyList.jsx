@@ -18,6 +18,10 @@ const AvailableCurrencyList = ({
       ...base,
       minWidth: "10em",
     }),
+    menu: (base) => ({
+      ...base,
+      minWidth: "20em",
+    }),
   };
 
   return (
