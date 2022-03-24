@@ -1,5 +1,6 @@
 import AvailableCurrencyList from "./AvailableCurrencyList";
-import ValueInput from "../ValueInput";
+import Input from "./Input";
+import DeleteCurrencyButton from "./DeleteCurrencyButton";
 
 const CurrencyListItem = ({
   availableCurrencies,
@@ -14,7 +15,8 @@ const CurrencyListItem = ({
       <AvailableCurrencyList
         {...{ availableCurrencies, code, updateCurrency }}
       />
-      <ValueInput {...{ value, updateValue, deleteCurrency }} />
+      <Input {...{ value, updateValue }} />
+      <DeleteCurrencyButton deleteCurrency={deleteCurrency} />
     </div>
   );
 };
