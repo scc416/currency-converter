@@ -13,6 +13,13 @@ const AvailableCurrencyList = ({
 
   const value = findCurrencyObj(options, code);
 
+  const styles = {
+    container: (base) => ({
+      ...base,
+      minWidth: "10em",
+    }),
+  };
+
   return (
     <Select
       {...{
@@ -21,6 +28,7 @@ const AvailableCurrencyList = ({
         isSearchable: true,
         menuPlacement: "auto",
         onChange: (e) => updateCurrency(e.value),
+        styles,
       }}
     />
   );
