@@ -16,6 +16,7 @@
   margin: 0.5em 0;
   align-items: center;
   justify-content: space-between;
+  max-width: 100%;
 }
 
 .ValueInput {
